@@ -11,55 +11,26 @@ Read the blog post: https://medium.com/@sqrendk/how-you-can-use-facebook-to-trac
 
 **Clone repository**
 ```
-git clone https://github.com/sqren/fb-sleep-stats.git
+heroku git:clone -a https://github.com/sqren/fb-sleep-stats.git
 ```
 
 **Configuration**
 
-Open the source code folder:
+Create a heroku app:
 ```
 cd fb-sleep-stats
 ```
 
-Make a copy of the default config file:
-```
-cp config/default.json config/development.json
-```
-
-Update the following values in `config/development.json`
- - "c_user": [your Facebook user id](http://findmyfbid.com/)
- -  "xs": [xs value from Facebook cookie](https://gist.github.com/sqren/0e4563f258c9e85e4ae1)
- - "appId": [Facebook App Id](https://gist.github.com/sqren/1ac0f5d316fcbd46d8c1)
+Specify the following ENV variables:
+ - "C_USER": [your Facebook user id](http://findmyfbid.com/)
+ -  "XS": [xs value from Facebook cookie](https://gist.github.com/sqren/0e4563f258c9e85e4ae1)
+ - "APP_ID": [Facebook App Id](https://gist.github.com/sqren/1ac0f5d316fcbd46d8c1)
 
 *Make sure there are not trailing tabs or spaces in the config file!*
 
-**Install dependencies**
+**Push to heroku**
 ```
-npm install
-```
-
-**Build assets**
-```
-npm run build-minified
-```
-
-## Starting
-
-**Start scraping**
-
-*This will run continously, polling Facebook every 10 minutes. Keep it running for as long as you want to track sleep.*
-```
-npm run scrape
-```
-
-**Start server**
-```
-npm start
-```
-
-See the result in the browser
-```
-http://localhost:3000
+git push heroku master
 ```
 
 #Troubleshooting
