@@ -10,7 +10,7 @@
     "forever-server": "forever -a start -l server.log index.js",
     "debug": "node-debug --no-preload ./index.js",
     "watch": "webpack --watch --progress",
-    "build-minified": "webpack --progress --optimize-minimize",
+    "postinstall": "webpack --progress --optimize-minimize",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
