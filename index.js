@@ -1,5 +1,3 @@
-var config = require('config');
-var PORT = config.get('server.port');
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var path = require('path');
@@ -24,6 +22,7 @@ process.on('uncaughtException', function(err) {
     console.error('Uncaught exception:', err, err.stack);
 });
 
+var PORT = process.env.PORT || 3000;
 // Start app
 app.listen(PORT);
 console.log('Running on http://localhost:' + PORT);
