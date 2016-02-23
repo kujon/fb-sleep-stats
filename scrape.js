@@ -1,6 +1,4 @@
 var _ = require('lodash');
-var config = require('config');
-var fbCookie = config.get('fbCookie');
 var fbSleep = require('fb-sleep');
 var userService = require('./src/server/services/user');
 var TEN_MINUTES = 1000 * 60 * 10;
@@ -28,4 +26,4 @@ function getAndSaveUsers(config, since) {
         .done();
 }
 
-getAndSaveUsers(fbCookie, Date.now() - TEN_MINUTES);
+getAndSaveUsers({c_user: process.env.C_USER, xs: process.env.XS}, Date.now() - TEN_MINUTES);

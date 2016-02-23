@@ -1,9 +1,4 @@
 {
-    "fbCookie": {
-        "c_user": "",
-        "xs": ""
-    },
-    "appId": 435522656639081,
     "server": {
         "port": 3000
     }
